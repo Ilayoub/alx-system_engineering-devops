@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# The pprogram displays listening ports
+# The program includes listening sockets
+# The PID and name of the program to which each socket belongs
+
+netstat -l --program
+
