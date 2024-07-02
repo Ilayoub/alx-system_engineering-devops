@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 # Installing Nginx where should be listening on port 80
 
-sudo apt-get -y update
+# Updating Packages before making Installations
+sudo apt-get update
 sudo apt-get -y install nginx
-sudo ufw allow "Nginx HTTP"
-echo 'Hello World!' > /var/www/html/index.html
+
+# Configuring the Uncomplicated Firewall (UFW) to allow incoming traffic for the Nginx HTTP service
+sudo ufw allow 'Nginx HTTP'
+
+# Creating an index.html page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Testing Nginx configurations for Syntax errors
+sudo nginx -t
+
+# Restarting Nginx
 sudo service nginx start
