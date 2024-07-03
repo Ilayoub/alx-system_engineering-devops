@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Installing Nginx where should be listening on port 80
+# Installs Nginx on Web-Sever-01
 
 # Updating Packages before making Installations
 sudo apt-get update
 sudo apt-get -y install nginx
 
-# Configuring the Uncomplicated Firewall (UFW) to allow incoming traffic for the Nginx HTTP service
+# Configuring the Uncomplicated Firewall
 sudo ufw allow 'Nginx HTTP'
 
 # Creating an index.html page
