@@ -33,9 +33,9 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend clicklayoub-tech-frontend
+frontend clickviral-tech-frontend
     bind *:80
-    default_backend clicklayoub-tech-backend
+    default_backend clickviral-tech-backend
 
 backend clickviral-tech-backend
     balance roundrobin
