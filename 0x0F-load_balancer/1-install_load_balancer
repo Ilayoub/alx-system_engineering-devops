@@ -33,14 +33,14 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend clickviral-tech-frontend
+frontend Ilayoub-frontend
     bind *:80
-    default_backend clickviral-tech-backend
+    default_backend Ilayoub-backend
 
 backend clickviral-tech-backend
     balance roundrobin
-    server 433645-web-01 100.26.161.4 check
-    server 433645-web-02 52.86.2.31 check
+    server 433645-web-01 100.26.161.4:80 check
+    server 433645-web-02 52.86.2.31:80 check
 "
 
 # shellcheck disable=SC2154
