@@ -45,8 +45,8 @@ frontend whytecode.tech
 backend web-backend
         balance roundrobin
         redirect scheme https if !{ ssl_fc }
-        server 433645-web-01 100.26.161.4:80 check
-        server 433645-web-02 52.86.2.31:80 check
+        server whytecode-web-01 10.247.41.95:80 check
+        server whytecode-web-02 10.247.229.30:80 check
 
 frontend whytecode_https
         bind 0.0.0.0:443 ssl crt /etc/haproxy/certs/www.whytecode.tech.pem
@@ -57,3 +57,4 @@ frontend whytecode_https
 
 backend letsencrypt-backend
         server letsencrypt 127.0.0.1:54321
+
