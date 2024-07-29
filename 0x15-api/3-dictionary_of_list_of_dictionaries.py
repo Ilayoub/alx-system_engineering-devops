@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""Python script to export data in the JSON format
+"""Python script to export data in the JSON format
 extended from the task#0 script"""
 
 import json
