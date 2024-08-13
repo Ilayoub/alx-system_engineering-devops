@@ -1,25 +1,16 @@
 #!/usr/bin/python3
 """
-function that queries the Reddit API and returns the number
-of subscribers, the no-active users and the total subscribers
+Function queries the Reddit API and returns the number of subs
 """
-
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """Returns the number of subscribers"""
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
-    headers = {'User-Agent': 'Chrome'}
-
-    try:
-        response = requests.get(url, headers=headers)
-
-        data = response.json()
-        find_subscribers = data.get("data", {}).get("subscribers", 0)
-        return find_subscribers
-    except requests.HTTPError as e:
-        if e.response.status_code == 404:
-            return 0
-        else:
-            return 0
+    """returns the number of subscribers for a given subreddit"""
+    if subreddit is None or type(subreddit) is not str:
+        return 0
+    r = requests.get('http://www.reddit.com/r/{}/about.json'.format(subreddit),
+                     headers={'User-Agent': '0x16-api_advanced:project:\
+v1.0.0 (by /u/firdaus_cartoon_jr)'}).json()
+    subs = r.get("data", {}).get("subscribers", 0)
+    return subs
