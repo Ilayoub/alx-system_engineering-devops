@@ -1,5 +1,7 @@
 **Postmortem** 
+
 ![image](https://github.com/user-attachments/assets/a7dbc84e-60ee-40cf-a955-b72160ffcd35)
+
 
 ***Summary**
 On August 13th, 2024 at midnight the server access went down resulting in 404 error for anyone trying to access a website. Background on the server being based on a LAMP stack.
