@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-pkill -HUP gunicorn
+# Reloads Gunicorn
+
+ps aux | grep gunicorn | awk '{ print $2 }' | xargs kill -HUP
